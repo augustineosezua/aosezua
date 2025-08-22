@@ -1,5 +1,13 @@
+@import url("https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap");
 @import "tailwindcss";
 
 body {
-  background-color: #F4F8F5;
+  overflow-x: hidden;
+  font-family: "Figtree", sans-serif;
 }
+
+#hero {
+  overflow: hidden;
+}
+
+
