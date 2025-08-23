@@ -6,6 +6,8 @@ import Timeline from "./Timeline";
 import linkedinIcon from "./assets/about-svgs/linkedin.svg";
 import ProjectsGrid from "./ProjectGrid";
 import GithubIcon from "./assets/about-svgs/github.svg";
+import navIcon from "./assets/about-svgs/nav.svg";
+import MobileNav from "./MobileNav";
 
 function App() {
   const toTop = () => {
@@ -16,7 +18,7 @@ function App() {
       <div className="h-screen w-screen bg-[#f4f8f5] pt-20">
         {/* Header Section */}
         <div
-          className="bg-[#F0F5F2] h-16 fixed top-0 flex items-center px-8 text-black w-full shadow z-2"
+          className="bg-[#F0F5F2] lg:h-16 fixed top-0 flex items-center px-8 text-black w-full shadow z-2 py-4"
           id="header"
         >
           <div className="w-full text-2xl font-bold cursor-pointer" onClick={toTop}>
@@ -37,6 +39,7 @@ function App() {
             </a>
           </div>
         </div>
+        <MobileNav />
         {/* Bouncing Balls Animation */}
         <div className="absolute top-16 left-0 w-full h-[calc(100%-var(--spacing)*16)] flex items-center justify-center pointer-events-none">
           <BouncingBalls />
@@ -62,7 +65,7 @@ function App() {
               smooth experiences and reliable systems that make a difference.
             </span>
             <div className="flex items-center gap-4" id="contact">
-              <a className="bg-[#001219] text-white px-6 py-3 rounded-lg hover:bg-[#02384e] w-fit cursor-pointer" href="mailto:augustineosezua1@gmail.com">
+              <a className="bg-[#001219] text-white px-6 py-3 text-lg rounded-lg hover:bg-[#02384e] w-fit cursor-pointer" href="mailto:augustineosezua1@gmail.com">
                 Contact Me{" "}
               </a>{" "}
               <a
