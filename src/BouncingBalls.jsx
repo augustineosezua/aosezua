@@ -77,7 +77,7 @@ const BouncingBalls = () => {
   return (
     <div
       ref={containerRef}
-      className="absolute inset-0 pointer-events-none overflow-hidden"
+      className="absolute inset-0 pointer-events-none overflow-hidden h-full"
       style={{ zIndex: 1 }}
       id="balls"
     />

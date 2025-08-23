@@ -10,4 +10,22 @@ body {
   overflow: hidden;
 }
 
+/* Horizontal scrolling animation */
+@keyframes scroll-horizontal {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-33.333%);
+  }
+}
 
+.animate-scroll-horizontal {
+  animation: scroll-horizontal 15s linear infinite;
+  display: flex;
+  width: max-content;
+}
+
+.animate-scroll-horizontal:hover {
+  animation-play-state: paused;
+}
