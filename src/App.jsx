@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import {BrowserRouter, Routes, Route} from "react-router-dom";
 import TypeW from "./Typewrite";
 import BouncingBalls from "./BouncingBalls";
 import Icons from "./Icons";
@@ -8,14 +9,14 @@ import ProjectsGrid from "./ProjectGrid";
 import GithubIcon from "./assets/about-svgs/github.svg";
 import navIcon from "./assets/about-svgs/nav.svg";
 import MobileNav from "./MobileNav";
+import Where from "./Where";
 
-function App() {
+function Home() {
   const toTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
   return (
-    <>
-      <div className="h-screen w-screen bg-[#f4f8f5] pt-20">
+    <div className="h-screen w-screen bg-[#f4f8f5] pt-20">
         {/* Header Section */}
         <div
           className="bg-[#F0F5F2] lg:h-16 fixed top-0 flex items-center px-8 text-black w-full shadow z-2 py-4"
@@ -78,7 +79,7 @@ function App() {
               </a>
               <a
                 className="w-14 flex-shrink-0 hover:cursor-pointer"
-                href="https://github.com/chickenjsx"
+                href="https://github.com/augustineosezua"
                 target="_blank"
                 rel="noreferrer noopener"
               >
@@ -137,7 +138,17 @@ function App() {
           </div>
         </div>
       </div>
-    </>
+  );
+}
+
+function App() {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/where" element={<Where />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
