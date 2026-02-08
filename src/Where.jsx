@@ -4,8 +4,8 @@ import BouncingBalls from "./BouncingBalls";
 function Where() {
   // TODO: Replace with data from database
   const message = {
-    title: "In my room, hardly working..",
-    date: "February 6, 2026 at 1:36PM"
+    title: "Asleep.. What y'all know about QHacks?",
+    date: "February 8, 2026 at 12:00PM"
   };
 
   const toTop = () => {
