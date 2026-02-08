@@ -1,7 +1,9 @@
-import { Link } from "react-router-dom";
-import BouncingBalls from "./BouncingBalls";
+"use client";
 
-function Where() {
+import Link from "next/link";
+import BouncingBalls from "@/components/BouncingBalls";
+
+export default function Where() {
   // TODO: Replace with data from database
   const message = {
     title: "Asleep.. What y'all know about QHacks?",
@@ -19,11 +21,11 @@ function Where() {
         className="bg-[#F0F5F2] lg:h-16 fixed top-0 flex items-center px-8 text-black w-full shadow z-10 py-4"
         id="header"
       >
-        <Link to="/" className="w-full text-2xl font-bold cursor-pointer" onClick={toTop}>
+        <Link href="/" className="w-full text-2xl font-bold cursor-pointer" onClick={toTop}>
           Augustine Osezua
         </Link>
         <div className="hidden lg:flex lg:gap-10 gap-5 lg:text-lg font-medium justify-end w-full">
-          <Link className="hover:underline cursor-pointer" to="/">
+          <Link className="hover:underline cursor-pointer" href="/">
             Home
           </Link>
           <a className="hover:underline cursor-pointer" href="mailto:augustineosezua1@gmail.com">
@@ -44,8 +46,8 @@ function Where() {
           <p className="text-lg text-[#001219] leading-relaxed pb-4">
             Last updated {message.date}
           </p>
-          <Link 
-            to="/" 
+          <Link
+            href="/"
             className="inline-block mt-8 bg-[#001219] text-white px-6 py-3 text-lg rounded-lg hover:bg-[#02384e] cursor-pointer"
           >
             ← Back Home
@@ -55,5 +57,3 @@ function Where() {
     </div>
   );
 }
-
-export default Where

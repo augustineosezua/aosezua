@@ -1,5 +1,3 @@
-import React from "react";
-
 const PROJECTS = [
   {
     title: "Peckodoro",
@@ -15,9 +13,9 @@ const PROJECTS = [
   },
   {
     title: "TextBin",
-    subtitle: "Privacy‑first notes",
+    subtitle: "Privacy\u2011first notes",
     description:
-      "Minimal, accessibility‑first note‑taking with anonymous notes (random keys) and deterministic key derivation for signed‑in users.",
+      "Minimal, accessibility\u2011first note\u2011taking with anonymous notes (random keys) and deterministic key derivation for signed\u2011in users.",
     stack: ["Next.js", "Prisma", "PostgreSQL", "TailwindCSS"],
     links: {
       demo: "https://textbin.app",
@@ -29,7 +27,7 @@ const PROJECTS = [
     title: "Family Feud",
     subtitle: "Realtime multiplayer web game",
     description:
-      "A web‑based Family Feud game with room join, buzzing, scoring, and smooth realtime updates.",
+      "A web\u2011based Family Feud game with room join, buzzing, scoring, and smooth realtime updates.",
     stack: ["React", "Node.js", "Socket.IO", "Git"],
     links: {
       demo: "https://teamtakedown.netlify.app/",
@@ -41,7 +39,7 @@ const PROJECTS = [
     title: "Secret Santa",
     subtitle: "Automated gift exchange",
     description:
-      "Full‑stack app that generates pairings, manages participants, and sends notifications for hassle‑free exchanges.",
+      "Full\u2011stack app that generates pairings, manages participants, and sends notifications for hassle\u2011free exchanges.",
     stack: ["React", "Node.js", "Express", "MySQL", "Heroku"],
     links: {
       demo: null,

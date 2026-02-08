@@ -1,3 +1,5 @@
+"use client";
+
 import Typewriter from "typewriter-effect";
 
 function TypeW() {

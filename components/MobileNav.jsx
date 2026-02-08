@@ -1,10 +1,13 @@
-import React, { useState } from 'react';
+"use client";
+
+import { useState } from "react";
 
 const navLinks = [
-    { name: 'About', href: '#about' },
-    { name: 'Experience', href: '#experience' },
-    { name: 'Projects', href: '#projects' },
-    { name: 'Contact', href: 'mailto:augustineosezua1@gmail.com' },
+    { name: "About", href: "#about" },
+    { name: "Experience", href: "#experience" },
+    { name: "Projects", href: "#projects" },
+    { name: "Where", href: "/where" },
+    { name: "Contact", href: "mailto:augustineosezua1@gmail.com" },
 ];
 
 export default function MobileNav() {
@@ -26,7 +29,7 @@ export default function MobileNav() {
             {/* Overlay Navigation */}
             <div
                 className={`fixed inset-0 z-40 bg-black/60 transition-opacity duration-300 ${
-                    open ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
+                    open ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
                 }`}
                 onClick={() => setOpen(false)}
             />
@@ -34,7 +37,7 @@ export default function MobileNav() {
             {/* Slider Panel */}
             <nav
                 className={`fixed top-0 right-0 h-full w-3/4 max-w-xs bg-white shadow-lg z-50 transform transition-transform duration-300 ${
-                    open ? 'translate-x-0' : 'translate-x-full'
+                    open ? "translate-x-0" : "translate-x-full"
                 }`}
                 aria-label="Mobile Navigation"
             >
