@@ -53,12 +53,11 @@ export default async function Where() {
       {/* Content Section */}
       <div className="pt-24 px-10 min-h-screen flex items-center justify-center">
         <div className="max-w-[600px] text-center">
+          <p className="text-lg text-[#001219] pb-2">Augustine is currently:</p>
           <h1 className="text-4xl font-bold text-[#10B981] pb-4">{title}</h1>
-          {date && (
-            <p className="text-lg text-[#001219] leading-relaxed pb-4">
-              Last updated {date}
-            </p>
-          )}
+          <p className="text-lg text-[#001219] leading-relaxed pb-4">
+            {date ? `Last updated ${date}` : "Idk bro, this guy's been missing for a month"}
+          </p>
           <Link
             href="/"
             className="inline-block mt-8 bg-[#001219] text-white px-6 py-3 text-lg rounded-lg hover:bg-[#02384e] cursor-pointer"
