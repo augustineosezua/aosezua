@@ -14,7 +14,14 @@ export async function POST(request) {
     if (!session) {
       return NextResponse.json(
         { error: "Unauthorized" },
-        { status: 401 }
+        { status: 401 },
+        {
+          headers: {
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
+      'Access-Control-Allow-Headers': 'Content-Type, Authorization',
+    },
+        }
       );
     }
 
@@ -24,7 +31,14 @@ export async function POST(request) {
     if (!title || typeof title !== "string" || title.trim().length === 0) {
       return NextResponse.json(
         { error: "Title is required and must be a non-empty string" },
-        { status: 400 }
+        { status: 400 },
+        {
+          headers: {
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
+      'Access-Control-Allow-Headers': 'Content-Type, Authorization',
+    },
+        }
       );
     }
 
@@ -37,12 +51,25 @@ export async function POST(request) {
     return NextResponse.json({
       title: status.title,
       updatedAt: status.updatedAt,
+    }, {
+      headers: {
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
+        'Access-Control-Allow-Headers': 'Content-Type, Authorization',
+      }
     });
   } catch (error) {
     console.error("Failed to update status:", error);
     return NextResponse.json(
       { error: "Failed to update status" },
-      { status: 500 }
+      { 
+        status: 500,
+        headers: {
+          'Access-Control-Allow-Origin': '*',
+          'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
+          'Access-Control-Allow-Headers': 'Content-Type, Authorization',
+        }
+      }
     );
   }
 }
