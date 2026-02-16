@@ -21,7 +21,6 @@ export default async function Where() {
         day: "numeric",
         hour: "numeric",
         minute: "2-digit",
-      }, {
         timeZone: "America/New_York",
       });
     }
