@@ -16,7 +16,7 @@ export async function POST(request) {
     const userIdCode = request.headers.get("x-api-idCode");
     const apiKey = request.headers.get("x-api-key");
 
-    if (!apiKey || apiKey !== process.env.API_KEY) {
+    if (!apiKey || apiKey !== process.env.API_SECRET_KEY) {
       return NextResponse.json(
         { error: "Unauthorized" },
         { status: 401, headers: corsHeaders }
@@ -26,10 +26,6 @@ export async function POST(request) {
     const existingStatus = await prisma.status.findUnique({
       where: { userCode: userIdCode },
     });
-
-    console.log("Existing status:", existingStatus);
-    console.log("User ID code from header:", userIdCode);
-    console.log("API key from header:", apiKey);
 
     if (!userIdCode || !existingStatus || userIdCode !== existingStatus?.userCode) {
       return NextResponse.json(
