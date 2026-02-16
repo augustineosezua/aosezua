@@ -27,6 +27,10 @@ export async function POST(request) {
       where: { userCode: userIdCode },
     });
 
+    console.log("Existing status:", existingStatus);
+    console.log("User ID code from header:", userIdCode);
+    console.log("API key from header:", apiKey);
+
     if (!userIdCode || !existingStatus || userIdCode !== existingStatus?.userCode) {
       return NextResponse.json(
         { error: "Unauthorized" },
