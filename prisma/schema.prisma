@@ -11,4 +11,5 @@ model Status {
   id        String   @id @default(cuid())
   title     String
   updatedAt DateTime @default(now()) @updatedAt
+  userCode String @default(nanoid(6)) @unique
 }
