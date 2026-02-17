@@ -4,6 +4,8 @@ import { NextResponse } from "next/server";
 export const runtime = 'nodejs';
 export const preferredRegion = 'iad1';
 
+
+
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
   'Access-Control-Allow-Methods': 'POST, OPTIONS',
