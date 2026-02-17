@@ -1,5 +1,6 @@
 import { prisma } from "@/lib/db";
 import { NextResponse } from "next/server";
+import { revalidateTag } from "next/cache";
 
 export const runtime = 'nodejs';
 export const preferredRegion = 'iad1';
@@ -53,6 +54,9 @@ export async function POST(request) {
       where: { userCode: userIdCode },
       data: { title: title.trim() }
     });
+
+    // Invalidate the cached status
+    revalidateTag("status");
 
     return NextResponse.json({
       title: status.title,
