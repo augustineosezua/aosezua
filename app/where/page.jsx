@@ -1,26 +1,17 @@
 import Link from "next/link";
 import BouncingBalls from "@/components/BouncingBalls";
 import { prisma } from "@/lib/db";
-import { unstable_cache } from "next/cache";
 
-// Cache the status query, revalidate every 60 seconds or on-demand via tag
-const getStatus = unstable_cache(
-  async () => {
-    const status = await prisma.status.findFirst({
-      orderBy: { updatedAt: "desc" },
-    });
-    return status;
-  },
-  ["status"],
-  { revalidate: 60, tags: ["status"] }
-);
+export const dynamic = "force-dynamic";
 
 export default async function Where() {
   let title = "Out of Office";
   let date = null;
 
   try {
-    const status = await getStatus();
+    const status = await prisma.status.findFirst({
+      orderBy: { updatedAt: "desc" },
+    });
 
     if (status) {
       title = status.title;
