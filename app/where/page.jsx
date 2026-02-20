@@ -57,7 +57,7 @@ export default async function Where() {
           <p className="text-lg text-[#001219] pb-2">Augustine is currently:</p>
           <h1 className="text-4xl font-bold text-[#10B981] pb-4">{title}</h1>
           <p className="text-lg text-[#001219] leading-relaxed pb-4">
-            {date ? `Last updated ${date}` : "Idk bro, this guy's been missing for a month"}
+            {date ? `Last updated ${date}` : "Status unavailable"}
           </p>
           <Link
             href="/"

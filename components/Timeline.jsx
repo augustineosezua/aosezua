@@ -1,13 +1,35 @@
 const experiences = [
   {
-    role: "Web Developer Intern",
+    role: "Events Coordinator",
+    company: "COMPSA - Computing Students' Association",
+    duration: "Sep 2024 - Present",
+    location: "Queen's University, ON",
+    responsibilities: [
+      "Organize and coordinate events for computing students, fostering community engagement and networking opportunities.",
+      "Collaborate with fellow executives to plan workshops, socials, and academic support initiatives.",
+      "Manage event logistics, promotion, and post-event feedback to continuously improve student experiences.",
+    ],
+  },
+  {
+    role: "Full Stack & Computer Vision Developer",
+    company: "ROMio – Range of Motion I/O (QMIND Research Team)",
+    duration: "Oct 2024 – Present",
+    location: "Queen's University, ON",
+    responsibilities: [
+      "Building a web system to estimate shoulder range of motion (ROM) from exercise videos using computer vision.",
+      "Implemented a Flask + Next.js pipeline for video upload, MediaPipe/OpenPose pose extraction, and ROM visualization.",
+      "Collaborating with an interdisciplinary team to align features with rehabilitation research objectives.",
+    ],
+  },
+  {
+    role: "JavaScript/Web Dev Intern",
     company: "NORCAT",
-    duration: "May 2025 - August 2025",
+    duration: "May 2025 - Aug 2025",
     location: "Sudbury, ON",
     responsibilities: [
-      "Contributed to the design, development, and maintenance of responsive web applications supporting training and innovation programs.",
-      "Worked across the stack: building front-end interfaces (HTML, CSS, JavaScript) and back-end services (Express.js).",
-      "Engineered a complete authentication system from the ground up, applying best practices in agile development and secure software design.",
+      "Built a full-stack e-commerce platform with an admin dashboard for product, inventory, and pricing management.",
+      "Designed a custom authentication/authorization system and integrated MS SQL for data persistence.",
+      "Integrated Moneris payment processing to support secure checkout and order flow.",
     ],
   },
   {

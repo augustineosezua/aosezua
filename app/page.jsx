@@ -101,9 +101,8 @@ export default function Home() {
                 a passion for building practical and impactful technology. My
                 interests span web development, database systems, and
                 algorithm design, and I enjoy turning complex ideas into
-                clean, functional solutions. I&apos;m especially drawn to projects
-                at the intersection of software and health care, where
-                technology can directly improve people&apos;s lives.
+                clean, functional solutions. I&apos;m always looking for opportunities
+                to build software that makes a real difference.
               </p>
               <h3 className="font-bold pt-4">My Tech Stack</h3>
             </div>

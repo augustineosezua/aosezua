@@ -1,22 +1,10 @@
 const PROJECTS = [
   {
-    title: "Peckodoro",
-    subtitle: "Pomodoro with Spotify & AI Study Assistant",
-    description:
-      "A focused Pomodoro timer that controls Spotify playback and includes an AI study assistant for summaries, prompts, and study tips.",
-    stack: ["Next.js", "Node.js", "TailwindCSS", "Spotify SDK", "OpenAI API"],
-    links: {
-      demo: "https://peckodoro.vercel.app",
-      github: "https://github.com/chickenjsx/peckodoro-display",
-    },
-    image: "",
-  },
-  {
     title: "TextBin",
-    subtitle: "Privacy\u2011first notes",
+    subtitle: "Privacy-first notes app",
     description:
-      "Minimal, accessibility\u2011first note\u2011taking with anonymous notes (random keys) and deterministic key derivation for signed\u2011in users.",
-    stack: ["Next.js", "Prisma", "PostgreSQL", "TailwindCSS"],
+      "A privacy-first notes app supporting anonymous notes and signed-in users with deterministic key derivation. Features client-side 256-bit encryption (zero-knowledge storage) and Stripe subscriptions for premium features.",
+    stack: ["Next.js", "Prisma", "PostgreSQL", "Stripe", "TailwindCSS"],
     links: {
       demo: "https://textbin.app",
       github: "https://github.com/chickenjsx/textbin-display",
@@ -24,10 +12,22 @@ const PROJECTS = [
     image: "",
   },
   {
+    title: "Peckodoro",
+    subtitle: "Pomodoro with Spotify & AI Study Assistant",
+    description:
+      "A Pomodoro web app with Spotify playback control via OAuth + Spotify Web API and an AI study assistant powered by OpenAI API. Deployed on Vercel with GitHub-based CI/CD.",
+    stack: ["Next.js", "Spotify Web API", "OpenAI API", "OAuth", "Vercel"],
+    links: {
+      demo: "https://peckodoro.vercel.app",
+      github: "https://github.com/chickenjsx/peckodoro-display",
+    },
+    image: "",
+  },
+  {
     title: "Family Feud",
     subtitle: "Realtime multiplayer web game",
     description:
-      "A web\u2011based Family Feud game with room join, buzzing, scoring, and smooth realtime updates.",
+      "A web-based Family Feud game with room join, buzzing, scoring, and smooth realtime updates.",
     stack: ["React", "Node.js", "Socket.IO", "Git"],
     links: {
       demo: "https://teamtakedown.netlify.app/",
@@ -39,10 +39,10 @@ const PROJECTS = [
     title: "Secret Santa",
     subtitle: "Automated gift exchange",
     description:
-      "Full\u2011stack app that generates pairings, manages participants, and sends notifications for hassle\u2011free exchanges.",
+      "A full-stack gift-exchange app that generates pairings, manages participants, and supports notification workflows. Implements event/admin flows with secure user management.",
     stack: ["React", "Node.js", "Express", "MySQL", "Heroku"],
     links: {
-      demo: null,
+      demo: "https://ss.chickengfx.xyz",
       github: null,
     },
     image: "",
