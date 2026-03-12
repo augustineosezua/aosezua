@@ -1,10 +1,10 @@
 const PROJECTS = [
   {
     title: "TextBin",
-    subtitle: "Privacy-first notes app",
+    subtitle: "textbin.app",
     description:
-      "A privacy-first notes app supporting anonymous notes and signed-in users with deterministic key derivation. Features client-side 256-bit encryption (zero-knowledge storage) and Stripe subscriptions for premium features.",
-    stack: ["Next.js", "Prisma", "PostgreSQL", "Stripe", "TailwindCSS"],
+      "Architected and launched a production note-taking platform on Next.js 15 and PostgreSQL, with server-side AES-256-CBC envelope encryption — per-note keys protected by a master key — that keeps user data secure at rest without hurting performance. Built a full monetization layer with Stripe subscriptions, premium feature gating, and resilient billing/error handling, plus Better Auth sign-in, Resend email scheduling, and CI/CD on Vercel.",
+    stack: ["Next.js 15", "PostgreSQL", "Prisma", "Stripe", "Better Auth", "Resend", "Vercel"],
     links: {
       demo: "https://textbin.app",
       github: "https://github.com/chickenjsx/textbin-display",
@@ -13,10 +13,10 @@ const PROJECTS = [
   },
   {
     title: "Peckodoro",
-    subtitle: "Pomodoro with Spotify & AI Study Assistant",
+    subtitle: "peckodoro.vercel.app",
     description:
-      "A Pomodoro web app with Spotify playback control via OAuth + Spotify Web API and an AI study assistant powered by OpenAI API. Deployed on Vercel with GitHub-based CI/CD.",
-    stack: ["Next.js", "Spotify Web API", "OpenAI API", "OAuth", "Vercel"],
+      "Brought Spotify Web API (OAuth2) and OpenAI API together into a single Pomodoro interface, so users can manage focus timers, music, and an AI study assistant without switching tabs. Shipped on Vercel with Git-based CI/CD, cross-session settings persistence, and careful state and error handling that makes the app feel solid across real study sessions.",
+    stack: ["Next.js", "Spotify Web API", "OpenAI API", "OAuth2", "Vercel"],
     links: {
       demo: "https://peckodoro.vercel.app",
       github: "https://github.com/chickenjsx/peckodoro-display",
@@ -37,12 +37,12 @@ const PROJECTS = [
   },
   {
     title: "Secret Santa",
-    subtitle: "Automated gift exchange",
+    subtitle: "secretsanta.chickengfx.xyz",
     description:
-      "A full-stack gift-exchange app that generates pairings, manages participants, and supports notification workflows. Implements event/admin flows with secure user management.",
-    stack: ["React", "Node.js", "Express", "MySQL", "Heroku"],
+      "Designed and shipped a full-stack gift-exchange platform that automates participant management, pairing logic, and admin workflows, replacing the error-prone manual coordination that normally goes into running these events. Built React and Node.js/Express services on PostgreSQL with clean deployment configuration and thorough setup documentation, making it easy to launch, extend, and hand off.",
+    stack: ["React", "Node.js", "Express", "PostgreSQL", "Railway"],
     links: {
-      demo: "https://ss.chickengfx.xyz",
+      demo: "https://secretsanta.chickengfx.xyz",
       github: null,
     },
     image: "",

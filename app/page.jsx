@@ -97,12 +97,16 @@ export default function Home() {
             <div className="max-w-[500px] ">
               <h2 className="font-bold">About</h2>
               <p className="text-lg pt-2">
-                I&apos;m Augustine, a Computing student at Queen&apos;s University with
-                a passion for building practical and impactful technology. My
-                interests span web development, database systems, and
-                algorithm design, and I enjoy turning complex ideas into
-                clean, functional solutions. I&apos;m always looking for opportunities
-                to build software that makes a real difference.
+                I&apos;m Augustine, a Computing student at Queen&apos;s University
+                (BSc, expected June 2028) who genuinely enjoys the full
+                journey of building software — from sketching out the
+                architecture to shipping something people actually use. I&apos;ve
+                worked across full-stack web development, computer vision,
+                and system-level programming, and I care a lot about writing
+                code that&apos;s clean, reliable, and easy for the next person to
+                pick up. Whether I&apos;m integrating a payment pipeline, building
+                a real-time UI, or just making a feature feel right, I like
+                doing it properly.
               </p>
               <h3 className="font-bold pt-4">My Tech Stack</h3>
             </div>
