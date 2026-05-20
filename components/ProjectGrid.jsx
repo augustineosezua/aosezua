@@ -1,3 +1,7 @@
+"use client";
+
+import { track } from "@vercel/analytics";
+
 const PROJECTS = [
   {
     title: "TextBin",
@@ -138,6 +142,7 @@ function Card({ project }) {
             rel="noreferrer noopener"
             className="inline-flex items-center gap-2 rounded-lg bg-[#10B981] px-4 py-2 text-sm font-medium text-white transition hover:bg-[#059669]"
             aria-label={`Open ${project.title} live demo`}
+            onClick={() => track("project_demo_click", { project: project.title })}
           >
             Live <ExternalLinkIcon />
           </a>
@@ -149,6 +154,7 @@ function Card({ project }) {
             rel="noreferrer noopener"
             className="inline-flex items-center gap-2 rounded-lg border border-gray-300 px-4 py-2 text-sm font-medium text-[#001219] transition hover:bg-gray-50"
             aria-label={`Open ${project.title} GitHub repository`}
+            onClick={() => track("project_github_click", { project: project.title })}
           >
             <GithubIcon /> Code
           </a>

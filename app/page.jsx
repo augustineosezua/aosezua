@@ -6,6 +6,7 @@ import Icons from "@/components/Icons";
 import Timeline from "@/components/Timeline";
 import ProjectsGrid from "@/components/ProjectGrid";
 import MobileNav from "@/components/MobileNav";
+import { track } from "@vercel/analytics";
 
 export default function Home() {
   const toTop = () => {
@@ -65,7 +66,7 @@ export default function Home() {
             smooth experiences and reliable systems that make a difference.
           </span>
           <div className="flex items-center gap-4" id="contact">
-            <a className="bg-[#001219] text-white px-6 py-3 text-lg rounded-lg hover:bg-[#02384e] w-fit cursor-pointer" href="mailto:augustineosezua1@gmail.com">
+            <a className="bg-[#001219] text-white px-6 py-3 text-lg rounded-lg hover:bg-[#02384e] w-fit cursor-pointer" href="mailto:augustineosezua1@gmail.com" onClick={() => track("contact_click", { location: "hero" })}>
               Contact Me{" "}
             </a>{" "}
             <a
@@ -73,6 +74,7 @@ export default function Home() {
               href="https://www.linkedin.com/in/augustineosezua/"
               target="_blank"
               rel="noreferrer noopener"
+              onClick={() => track("social_click", { platform: "linkedin" })}
             >
               <img src="/about-svgs/linkedin.svg" alt="LinkedIn Icon" />
             </a>
@@ -81,6 +83,7 @@ export default function Home() {
               href="https://github.com/augustineosezua"
               target="_blank"
               rel="noreferrer noopener"
+              onClick={() => track("social_click", { platform: "github" })}
             >
               <img src="/about-svgs/github.svg" alt="GitHub Icon" />
             </a>
