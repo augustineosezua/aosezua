@@ -2,32 +2,22 @@
 
 import Typewriter from "typewriter-effect";
 
-function TypeW() {
-  const strings = [
-    "Full Stack Developer",
-    "Computing Student at Queen's University",
-    "Curious Learner",
-    "Problem Solver",
-    "Creative Coder",
-    "Tech Enthusiast",
-    "Innovative Builder",
-    "Team Player",
-    "UI/UX Explorer",
-    "Resilient Developer",
-    "Driven Creator",
-    "Spiderman Fan",
-  ];
+const TITLES = [
+  "full-stack developer",
+  "Computing student at Queen's",
+  "developer who likes the details",
+  "Spider-Man fan",
+];
 
-  const randomStrings = strings.sort(() => 0.5 - Math.random()).slice(0, 6);
+export default function TypeW() {
   return (
     <Typewriter
       options={{
-        strings: randomStrings,
+        strings: TITLES,
         autoStart: true,
         loop: true,
+        pauseFor: 2200,
       }}
     />
   );
 }
-
-export default TypeW;

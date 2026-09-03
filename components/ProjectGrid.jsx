@@ -7,144 +7,145 @@ const PROJECTS = [
     title: "TextBin",
     subtitle: "textbin.app",
     description:
-      "Architected and launched a production note-taking platform on Next.js 15 and PostgreSQL, with server-side AES-256-CBC envelope encryption — per-note keys protected by a master key — that keeps user data secure at rest without hurting performance. Built a full monetization layer with Stripe subscriptions, premium feature gating, and resilient billing/error handling, plus Better Auth sign-in, Resend email scheduling, and CI/CD on Vercel.",
+      "I wanted the notes to stay private in the database too. TextBin encrypts each one with its own key, wraps that key with a master key, and adds paid plans through Stripe. Better Auth handles sign-in, Resend handles reminders, and Vercel handles deployment.",
     stack: ["Next.js 15", "PostgreSQL", "Prisma", "Stripe", "Better Auth", "Resend", "Vercel"],
     links: {
       demo: "https://textbin.app",
-      github: "https://github.com/chickenjsx/textbin-display",
+      github: "https://github.com/augustineosezua/textbin-display",
     },
     image: "",
+    placeholder: "bg-sun",
+    tilt: "lg:-rotate-[0.8deg]",
   },
   {
     title: "Peckodoro",
     subtitle: "peckodoro.vercel.app",
     description:
-      "Brought Spotify Web API (OAuth2) and OpenAI API together into a single Pomodoro interface, so users can manage focus timers, music, and an AI study assistant without switching tabs. Shipped on Vercel with Git-based CI/CD, cross-session settings persistence, and careful state and error handling that makes the app feel solid across real study sessions.",
+      "Peckodoro keeps a Pomodoro timer, Spotify, and an OpenAI-powered study helper in one tab. It remembers your settings between sessions, which means one less thing to set up when it's time to study.",
     stack: ["Next.js", "Spotify Web API", "OpenAI API", "OAuth2", "Vercel"],
     links: {
       demo: "https://peckodoro.vercel.app",
-      github: "https://github.com/chickenjsx/peckodoro-display",
+      github: "https://github.com/augustineosezua/peckodoro-display",
     },
     image: "",
+    placeholder: "bg-coral",
+    tilt: "lg:rotate-[0.8deg]",
   },
   {
     title: "Family Feud",
-    subtitle: "Realtime multiplayer web game",
+    subtitle: "Real-time multiplayer web game",
     description:
-      "A web-based Family Feud game with room join, buzzing, scoring, and smooth realtime updates.",
+      "Make a room, send your friends the link, then buzz in and keep score. Socket.IO keeps every screen in sync, including the arguments over who buzzed first.",
     stack: ["React", "Node.js", "Socket.IO", "Git"],
     links: {
       demo: "https://teamtakedown.netlify.app/",
       github: "https://github.com/abdelrmobarak/team-takedown",
     },
     image: "",
+    placeholder: "bg-mint",
+    tilt: "lg:rotate-[0.6deg]",
   },
   {
     title: "Secret Santa",
     subtitle: "secretsanta.chickengfx.xyz",
     description:
-      "Designed and shipped a full-stack gift-exchange platform that automates participant management, pairing logic, and admin workflows, replacing the error-prone manual coordination that normally goes into running these events. Built React and Node.js/Express services on PostgreSQL with clean deployment configuration and thorough setup documentation, making it easy to launch, extend, and hand off.",
+      "Secret Santa handles sign-ups, pairings, and the organizer's admin work. I built the React and Express app on PostgreSQL, then wrote the setup docs so the next organizer wouldn't need me hovering over their shoulder.",
     stack: ["React", "Node.js", "Express", "PostgreSQL", "Railway"],
     links: {
       demo: "https://secretsanta.chickengfx.xyz",
       github: null,
     },
     image: "",
+    placeholder: "bg-cream",
+    tilt: "lg:-rotate-[0.6deg]",
   },
 ];
 
-function ExternalLinkIcon({ className = "w-4 h-4" }) {
+function ExternalLinkIcon() {
   return (
     <svg
-      xmlns="http://www.w3.org/2000/svg"
+      width="16"
+      height="16"
       viewBox="0 0 24 24"
       fill="none"
       stroke="currentColor"
-      strokeWidth="1.5"
-      className={className}
+      strokeWidth="2.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
       aria-hidden="true"
     >
-      <path
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        d="M13.5 6H18m0 0v4.5M18 6l-7.5 7.5"
-      />
-      <path
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        d="M8.25 7.5H6A1.5 1.5 0 004.5 9v9A1.5 1.5 0 006 19.5h9a1.5 1.5 0 001.5-1.5v-2.25"
-      />
+      <path d="M7 17L17 7" />
+      <path d="M8 7h9v9" />
     </svg>
   );
 }
 
-function GithubIcon({ className = "w-4 h-4" }) {
+export function GithubIcon({ size = 16 }) {
   return (
     <svg
-      xmlns="http://www.w3.org/2000/svg"
+      width={size}
+      height={size}
       viewBox="0 0 24 24"
-      fill="currentColor"
-      className={className}
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
       aria-hidden="true"
     >
-      <path d="M12 .5a11.5 11.5 0 00-3.636 22.411c.575.105.785-.249.785-.555 0-.274-.01-1.157-.015-2.102-3.193.695-3.868-1.54-3.868-1.54-.523-1.33-1.278-1.684-1.278-1.684-1.044-.714.079-.699.079-.699 1.154.081 1.761 1.186 1.761 1.186 1.027 1.76 2.694 1.251 3.35.957.104-.744.402-1.251.73-1.54-2.55-.288-5.233-1.276-5.233-5.678 0-1.255.45-2.28 1.186-3.085-.119-.289-.514-1.45.113-3.02 0 0 .966-.31 3.167 1.178a10.99 10.99 0 015.767 0c2.2-1.488 3.165-1.178 3.165-1.178.628 1.57.233 2.731.114 3.02.738.805 1.185 1.83 1.185 3.085 0 4.414-2.688 5.387-5.247 5.67.414.357.783 1.062.783 2.142 0 1.545-.014 2.79-.014 3.172 0 .307.208.664.79.552A11.5 11.5 0 0012 .5z" />
+      <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.9a3.4 3.4 0 0 0-.9-2.6c3.1-.3 6.4-1.5 6.4-7A5.4 5.4 0 0 0 20 4.8 5 5 0 0 0 19.9 1s-1.2-.4-3.9 1.5a13.4 13.4 0 0 0-7 0C6.3.6 5.1 1 5.1 1A5 5 0 0 0 5 4.8a5.4 5.4 0 0 0-1.5 3.7c0 5.5 3.3 6.7 6.4 7a3.4 3.4 0 0 0-.9 2.6V22" />
     </svg>
-  );
-}
-
-function Tag({ children }) {
-  return (
-    <span className="inline-flex items-center rounded-full bg-[#E6EBE8] px-3 py-1 text-xs font-medium text-[#001219]">
-      {children}
-    </span>
   );
 }
 
 function Card({ project }) {
   return (
     <article
-      className="group relative flex h-full flex-col overflow-hidden rounded-lg bg-white p-6 shadow-sm transition hover:shadow-md border border-gray-200"
-      role="region"
+      className={`flex h-full flex-col gap-3.5 bg-white p-[18px] sticker-lg lg:p-6 ${project.tilt}`}
       aria-label={`${project.title} project card`}
     >
       {project.image ? (
-        <div className="mb-4 overflow-hidden rounded-lg">
-          <img
-            src={project.image}
-            alt={`${project.title} screenshot`}
-            className="h-44 w-full object-cover transition-transform duration-300 group-hover:scale-[1.03]"
-            loading="lazy"
-            decoding="async"
-          />
+        <img
+          src={project.image}
+          alt={`${project.title} screenshot`}
+          className="h-40 w-full border-[3px] border-ink object-cover lg:h-50"
+          loading="lazy"
+          decoding="async"
+        />
+      ) : (
+        <div
+          className={`flex h-40 items-center justify-center border-[3px] border-ink text-sm font-bold lg:h-50 ${project.placeholder}`}
+        >
+          {project.title}
         </div>
-      ) : null}
+      )}
 
-      <h3 className="text-lg font-semibold text-[#001219]">{project.title}</h3>
-      <p className="mt-1 text-sm text-[#10B981] font-medium">
-        {project.subtitle}
-      </p>
+      <div className="flex flex-col gap-1 lg:flex-row lg:items-baseline lg:justify-between lg:gap-3">
+        <h3 className="font-display text-2xl font-extrabold lg:text-[30px]">{project.title}</h3>
+        <p className="text-sm font-bold text-mint">{project.subtitle}</p>
+      </div>
 
-      <p className="mt-3 text-sm text-gray-700 leading-relaxed">
-        {project.description}
-      </p>
+      <p className="text-[15px] leading-relaxed">{project.description}</p>
 
-      <div className="mt-4 flex flex-wrap gap-2">
+      <div className="flex flex-wrap gap-1.5">
         {project.stack.map((s) => (
-          <Tag key={s}>{s}</Tag>
+          <span key={s} className="border-2 border-ink px-2.5 py-0.5 text-xs font-bold">
+            {s}
+          </span>
         ))}
       </div>
 
-      <div className="mt-6 flex gap-3">
+      <div className="mt-auto flex gap-2.5 pt-1.5">
         {project.links.demo && (
           <a
             href={project.links.demo}
             target="_blank"
             rel="noreferrer noopener"
-            className="inline-flex items-center gap-2 rounded-lg bg-[#10B981] px-4 py-2 text-sm font-medium text-white transition hover:bg-[#059669]"
-            aria-label={`Open ${project.title} live demo`}
+            className="inline-flex items-center gap-2 bg-mint px-[18px] py-2.5 text-sm font-bold sticker-btn"
+            aria-label={`Try ${project.title}`}
             onClick={() => track("project_demo_click", { project: project.title })}
           >
-            Live <ExternalLinkIcon />
+            Try it <ExternalLinkIcon />
           </a>
         )}
         {project.links.github && (
@@ -152,7 +153,7 @@ function Card({ project }) {
             href={project.links.github}
             target="_blank"
             rel="noreferrer noopener"
-            className="inline-flex items-center gap-2 rounded-lg border border-gray-300 px-4 py-2 text-sm font-medium text-[#001219] transition hover:bg-gray-50"
+            className="inline-flex items-center gap-2 bg-white px-[18px] py-2.5 text-sm font-bold sticker-btn"
             aria-label={`Open ${project.title} GitHub repository`}
             onClick={() => track("project_github_click", { project: project.title })}
           >
@@ -166,7 +167,7 @@ function Card({ project }) {
 
 export default function ProjectsGrid() {
   return (
-    <div className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-2">
+    <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
       {PROJECTS.map((p) => (
         <Card key={p.title} project={p} />
       ))}

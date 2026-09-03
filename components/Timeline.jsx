@@ -1,13 +1,14 @@
 const experiences = [
   {
-    role: "Events Coordinator",
-    company: "COMPSA - Computing Students' Association",
-    duration: "Sep 2024 - Present",
-    location: "Queen's University, ON",
+    role: "JavaScript / Web Developer Intern",
+    company: "NORCAT",
+    duration: "May – Aug 2025",
+    location: "Sudbury, ON",
+    chip: "bg-coral rotate-3",
     responsibilities: [
-      "Organize and coordinate events for computing students, fostering community engagement and networking opportunities.",
-      "Collaborate with fellow executives to plan workshops, socials, and academic support initiatives.",
-      "Manage event logistics, promotion, and post-event feedback to continuously improve student experiences.",
+      "At NORCAT, I worked on both the customer storefront and the admin dashboard, building tools for products, inventory, and pricing from requirements that often started as a conversation.",
+      "I added role-based access controls backed by MS SQL, so staff only saw the data and actions their roles allowed.",
+      "I integrated Moneris checkout, including request validation, transaction handling, and the trip from cart to order confirmation.",
     ],
   },
   {
@@ -15,72 +16,71 @@ const experiences = [
     company: "ROMMio – Range of Motion I/O (QMIND Healthcare Project)",
     duration: "Oct 2024 – Present",
     location: "Queen's University, ON",
+    chip: "bg-sun -rotate-2",
     responsibilities: [
-      "Shaped the real-time UI of a markerless range-of-motion prototype for shoulder orthopedic assessment, translating raw CV output (33 body landmarks via MediaPipe PoseLandmarker and Intel RealSense D435 depth sensing) into a clear, clinically-legible live interface.",
-      "Led demo execution at CUCAI 2026 for a Python application showing skeletal overlays and 3D vector-based angle calculations with an 8-frame smoothing window, presenting to physicians and competition judges.",
-      "Wrote technical documentation that turned the team's orthopedic feasibility research into step-by-step reproducible workflows, cutting onboarding time for new contributors.",
-    ],
-  },
-  {
-    role: "JavaScript / Web Developer Intern",
-    company: "NORCAT",
-    duration: "May 2025 – Aug 2025",
-    location: "Sudbury, ON",
-    responsibilities: [
-      "Architected and shipped production-ready full-stack features across an e-commerce platform and internal admin dashboard, turning loosely defined requirements into clean, maintainable code that noticeably tightened product, inventory, and pricing workflows.",
-      "Built role-based authentication/authorization across all core operational flows backed by MS SQL, meaningfully improving data integrity and platform reliability.",
-      "Owned end-to-end Moneris payment integration, hardening the checkout pipeline with thorough validation and transaction logic to ship a secure, production-grade order flow from cart to confirmation.",
+      "I designed the live interface for a shoulder-assessment tool. It turns 33 MediaPipe landmarks and Intel RealSense depth data into something a clinician can read at a glance.",
+      "I ran our CUCAI 2026 demo for physicians and judges, showing skeletal overlays, 3D angle calculations, and an 8-frame smoothing window.",
+      "I documented the research and setup as reproducible steps, so new contributors didn't have to piece the project together from scratch.",
     ],
   },
   {
     role: "Project Manager",
-    company: "Queen's University Web Development - QWeb",
-    duration: "Feb 2025 - July 2025",
+    company: "Queen's University Web Development – QWeb",
+    duration: "Feb – Jul 2025",
     location: "Kingston, ON",
+    chip: "bg-mint rotate-2",
     responsibilities: [
-      "Led a client project from initial Figma design through to a fully deployed website with integrated CMS, built on Next.js 15.",
-      "Coordinated between developers, designers, and the client to deliver a professional, scalable platform.",
-      "Strengthened leadership skills by balancing project timelines, client expectations, and technical implementation.",
+      "I led a student team building a client website, from the first Figma designs to a deployed Next.js 15 site with a CMS.",
+      "I kept the client, designers, and developers aligned through kickoff, reviews, and handoff.",
+      "The job taught me when to adjust the plan, when to push back, and how to keep a build moving when the first idea wasn't practical.",
+    ],
+  },
+  {
+    role: "Events Coordinator",
+    company: "COMPSA – Computing Students' Association",
+    duration: "Sep 2024 – Present",
+    location: "Queen's University, ON",
+    chip: "bg-white -rotate-3",
+    responsibilities: [
+      "I plan socials, workshops, and study sessions for Queen's computing students.",
+      "I work with the rest of the executive team to choose events students will want to attend.",
+      "I handle the venue, promotion, and day-of details, then use the feedback to improve the next event.",
     ],
   },
 ];
 
 export default function Timeline() {
   return (
-    <div className="max-w-3xl mx-auto">
-      <div className="relative">
-        {/* Simple timeline line */}
-        <div className="absolute left-4 top-8 bottom-8 w-px bg-gray-300"></div>
-
-        {experiences.map((exp, index) => (
-          <div key={index} className="relative pb-8 last:pb-0">
-            {/* Simple dot */}
-            <div className="absolute left-2 top-6 w-4 h-4 bg-[#10B981] rounded-full border-2 border-white shadow-sm"></div>
-
-            {/* Content */}
-            <div className="ml-12">
-              <h3 className="text-lg font-semibold text-[#001219] mb-1">
+    <div className="grid grid-cols-1 gap-7 lg:grid-cols-2">
+      {experiences.map((exp) => (
+        <article
+          key={exp.role + exp.company}
+          className="flex flex-col gap-3.5 bg-white p-5 sticker-lg lg:p-7"
+        >
+          <div className="flex flex-col-reverse items-start justify-between gap-3 lg:flex-row lg:gap-4">
+            <div className="flex flex-col gap-1">
+              <h3 className="font-display text-xl leading-tight font-extrabold lg:text-2xl">
                 {exp.role}
               </h3>
-              <p className="text-[#10B981] font-medium mb-1">{exp.company}</p>
-              <p className="text-sm text-gray-600 mb-3">
-                {exp.duration} • {exp.location}
-              </p>
-
-              <div className="space-y-1">
-                {exp.responsibilities.map((responsibility, idx) => (
-                  <p
-                    key={idx}
-                    className="text-sm text-gray-700 leading-relaxed"
-                  >
-                    • {responsibility}
-                  </p>
-                ))}
-              </div>
+              <p className="text-[15px] font-bold text-mint lg:text-[17px]">{exp.company}</p>
             </div>
+            <span
+              className={`shrink-0 px-3 py-1.5 text-[13px] font-bold whitespace-nowrap sticker-sm ${exp.chip}`}
+            >
+              {exp.duration}
+            </span>
           </div>
-        ))}
-      </div>
+          <p className="text-sm font-semibold opacity-65">{exp.location}</p>
+          <ul className="flex flex-col gap-2.5 text-[15px] leading-relaxed">
+            {exp.responsibilities.map((responsibility) => (
+              <li key={responsibility} className="flex gap-2.5">
+                <span className="mt-1.5 h-2.5 w-2.5 shrink-0 rounded-full border-2 border-ink bg-mint" />
+                <span>{responsibility}</span>
+              </li>
+            ))}
+          </ul>
+        </article>
+      ))}
     </div>
   );
 }

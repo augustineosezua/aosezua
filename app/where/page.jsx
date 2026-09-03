@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Header from "@/components/Header";
 import BouncingBalls from "@/components/BouncingBalls";
 import { prisma } from "@/lib/db";
 
@@ -24,49 +25,43 @@ export default async function Where() {
         timeZone: "America/New_York",
       });
     }
-  } catch {}
+  } catch (error) {
+    console.error("Failed to load status:", error);
+  }
 
   return (
-    <div className="min-h-screen w-screen bg-[#f4f8f5]">
-      {/* Header Section */}
-      <div
-        className="bg-[#F0F5F2] lg:h-16 fixed top-0 flex items-center px-8 text-black w-full shadow z-10 py-4"
-        id="header"
-      >
-        <Link href="/" className="w-full text-2xl font-bold cursor-pointer">
-          Augustine Osezua
-        </Link>
-        <div className="hidden lg:flex lg:gap-10 gap-5 lg:text-lg font-medium justify-end w-full">
-          <Link className="hover:underline cursor-pointer" href="/">
-            Home
-          </Link>
-          <a className="hover:underline cursor-pointer" href="mailto:augustineosezua1@gmail.com">
-            Contact
-          </a>
+    <div className="dots flex min-h-screen flex-col pt-20">
+      <Header />
+
+      <main className="relative flex flex-grow items-center justify-center px-5 py-16 lg:px-16">
+        <div className="absolute inset-0 hidden lg:block">
+          <BouncingBalls scale={0.7} />
         </div>
-      </div>
 
-      {/* Bouncing Balls Animation */}
-      <div className="absolute top-16 left-0 w-full h-[calc(100%-var(--spacing)*16)] flex items-center justify-center pointer-events-none">
-        <BouncingBalls />
-      </div>
-
-      {/* Content Section */}
-      <div className="pt-24 px-10 min-h-screen flex items-center justify-center">
-        <div className="max-w-[600px] text-center">
-          <p className="text-lg text-[#001219] pb-2">Augustine is currently:</p>
-          <h1 className="text-4xl font-bold text-[#10B981] pb-4">{title}</h1>
-          <p className="text-lg text-[#001219] leading-relaxed pb-4">
-            {date ? `Last updated ${date}` : "Status unavailable"}
+        <div className="relative flex w-full max-w-[620px] flex-col gap-5 bg-white p-7 sticker-lg lg:-rotate-1 lg:p-12 lg:shadow-[12px_12px_0_var(--color-ink)]">
+          <span className="absolute -top-5 -left-3 -rotate-6 bg-sun px-3 py-1.5 text-sm font-bold sticker lg:-top-6 lg:-left-4 lg:px-4 lg:py-2 lg:text-[15px]">
+            Right now
+          </span>
+          <p className="text-lg font-semibold lg:text-xl">Here&apos;s what I&apos;m up to:</p>
+          <h1 className="font-display text-[44px] leading-none font-extrabold tracking-[-0.03em] text-mint lg:text-7xl">
+            {title}
+          </h1>
+          <p className="flex items-center gap-2.5 text-[15px] font-semibold opacity-70">
+            <span className="h-2.5 w-2.5 rounded-full border-2 border-ink bg-mint" />
+            {date ? `Last updated ${date} ET` : "Status unavailable"}
           </p>
           <Link
             href="/"
-            className="inline-block mt-8 bg-[#001219] text-white px-6 py-3 text-lg rounded-lg hover:bg-[#02384e] cursor-pointer"
+            className="mt-2 inline-flex w-fit items-center gap-2.5 bg-ink px-6 py-3.5 text-[17px] font-bold text-cream sticker-btn"
           >
-            ← Back Home
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+              <path d="M19 12H5" />
+              <path d="M11 18l-6-6 6-6" />
+            </svg>
+            Back to my site
           </Link>
         </div>
-      </div>
+      </main>
     </div>
   );
 }

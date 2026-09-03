@@ -1,16 +1,66 @@
-@import url("https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=Figtree:ital,wght@0,300..900;1,300..900&display=swap");
 @import "tailwindcss";
+
+@theme {
+  --color-ink: #0b0f0e;
+  --color-cream: #fdfbf4;
+  --color-mint: #10b981;
+  --color-coral: #ff6b57;
+  --color-sun: #ffd23f;
+  --font-sans: "Figtree", "Helvetica Neue", Arial, sans-serif;
+  --font-display: "Bricolage Grotesque", "Arial Black", Impact, sans-serif;
+}
+
+@utility sticker {
+  border: 3px solid var(--color-ink);
+  box-shadow: 4px 4px 0 var(--color-ink);
+}
+
+@utility sticker-sm {
+  border: 3px solid var(--color-ink);
+  box-shadow: 3px 3px 0 var(--color-ink);
+}
+
+@utility sticker-lg {
+  border: 3px solid var(--color-ink);
+  box-shadow: 8px 8px 0 var(--color-ink);
+}
+
+@utility sticker-btn {
+  border: 3px solid var(--color-ink);
+  box-shadow: 4px 4px 0 var(--color-ink);
+  transition: transform 120ms ease, box-shadow 120ms ease;
+  &:hover {
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0 var(--color-ink);
+  }
+  &:active {
+    transform: translate(4px, 4px);
+    box-shadow: 0 0 0 var(--color-ink);
+  }
+}
+
+@utility dots {
+  background-color: var(--color-cream);
+  background-image: radial-gradient(rgba(11, 15, 14, 0.16) 1.5px, transparent 1.5px);
+  background-size: 44px 44px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
 
 body {
   overflow-x: hidden;
-  font-family: "Figtree", sans-serif;
+  font-family: var(--font-sans);
+  color: var(--color-ink);
+  background-color: var(--color-cream);
 }
 
-#hero {
-  overflow: hidden;
+p {
+  text-wrap: pretty;
 }
 
-/* Horizontal scrolling animation */
 @keyframes scroll-horizontal {
   0% {
     transform: translateX(0);
@@ -21,7 +71,7 @@ body {
 }
 
 .animate-scroll-horizontal {
-  animation: scroll-horizontal 15s linear infinite;
+  animation: scroll-horizontal 25s linear infinite;
   display: flex;
   width: max-content;
 }

@@ -5,7 +5,9 @@ import ReferralTracker from "@/components/ReferralTracker"
 
 
 export const metadata = {
-  title: "Augustine Osezua",
+  title: "Augustine Osezua | Full-stack developer",
+  description:
+    "Augustine Osezua is a Computing student at Queen's University who builds full-stack web apps.",
   icons: {
     icon: "/favicon.ico",
   },
