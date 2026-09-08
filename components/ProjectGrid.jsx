@@ -25,7 +25,7 @@ const PROJECTS = [
     stack: ["Next.js", "Spotify Web API", "OpenAI API", "OAuth2", "Vercel"],
     links: {
       demo: "https://peckodoro.vercel.app",
-      github: "https://github.com/augustineosezua/peckodoro-display",
+      github: "https://github.com/augustineosezua/peckodoro",
     },
     image: "",
     placeholder: "bg-coral",
