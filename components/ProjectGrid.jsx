@@ -11,7 +11,7 @@ const PROJECTS = [
     stack: ["Next.js 15", "PostgreSQL", "Prisma", "Stripe", "Better Auth", "Resend", "Vercel"],
     links: {
       demo: "https://textbin.app",
-      github: "https://github.com/augustineosezua/textbin-display",
+      github: "https://github.com/augustineosezua/textbin",
     },
     image: "",
     placeholder: "bg-sun",
